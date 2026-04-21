@@ -519,6 +519,126 @@ export default function Dashboard() {
         /* moisture mini bar inside ctrl-stat */
         .mini-bar { height: 4px; border-radius: 4px; background: rgba(129,231,175,.14); margin-top: 7px; overflow: hidden; }
         .mini-bar-fill { height: 100%; border-radius: 4px; transition: width 1.4s cubic-bezier(.4,0,.2,1); }
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE — TABLET (≤768px)
+           ══════════════════════════════════════════ */
+        @media (max-width: 768px) {
+          /* header */
+          .hdr > div { height: 66px !important; padding: 0 18px !important; }
+          .hdr > div > a > div:first-child { width: 44px !important; height: 44px !important; border-radius: 13px !important; }
+          .hdr > div > a > div:first-child svg { width: 22px !important; height: 22px !important; }
+          .hdr > div > a > div:last-child > div:first-child { font-size: 18px !important; }
+          .hdr > div > a > div:last-child > div:last-child { font-size: 10px !important; }
+
+          /* main container */
+          .page-bg > div:last-child { padding: 20px 14px 48px !important; }
+
+          /* tab bar */
+          .tab-wrap { gap: 6px; padding: 5px; }
+          .tab { font-size: 12px; padding: 10px 18px; gap: 6px; }
+
+          /* 3 cards → 1 column */
+          .card-grid { grid-template-columns: 1fr !important; }
+          .stat-grid { flex-wrap: wrap !important; }
+          .page-bg .card { padding: 22px !important; }
+
+          /* pump control panel */
+          .pump-wrap { grid-template-columns: 1fr !important; }
+          .pump-left { border-right: none !important; border-bottom: 1.5px solid rgba(129,231,175,.16); padding: 28px 20px !important; }
+          .pump-right { padding: 20px !important; gap: 14px !important; }
+          .pump-ring { width: 120px !important; height: 120px !important; }
+          .power-btn { width: 78px !important; height: 78px !important; }
+          .power-btn svg { width: 30px !important; height: 30px !important; }
+
+          /* ctrl-stat rows */
+          .ctrl-stat { padding: 12px 14px !important; gap: 10px !important; }
+          .ctrl-stat-icon { width: 34px !important; height: 34px !important; }
+          .ctrl-stat-val { font-size: 13px !important; }
+
+          /* stat pills in history */
+          .spill { padding: 14px 18px !important; gap: 10px !important; }
+
+          /* table */
+          .tbl-th { padding: 12px 14px !important; font-size: 9px !important; }
+          .tbl-td { padding: 14px 14px !important; font-size: 12px !important; }
+
+          /* alert */
+          .alert-box { padding: 28px 22px !important; border-radius: 20px !important; }
+        }
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE — PHONE (≤480px)
+           ══════════════════════════════════════════ */
+        @media (max-width: 480px) {
+          /* header compact */
+          .hdr > div { height: 58px !important; padding: 0 12px !important; gap: 10px !important; }
+          .hdr > div > a { gap: 10px !important; }
+          .hdr > div > a > div:first-child { width: 38px !important; height: 38px !important; border-radius: 11px !important; box-shadow: 0 3px 14px rgba(46,196,122,.30) !important; }
+          .hdr > div > a > div:first-child svg { width: 18px !important; height: 18px !important; }
+          .hdr > div > a > div:last-child > div:first-child { font-size: 15px !important; }
+          .hdr > div > a > div:last-child > div:last-child { font-size: 9px !important; letter-spacing: .06em !important; }
+
+          /* connected pill shrink */
+          .hdr > div > div:last-child > div:last-child {
+            padding: 6px 12px !important; gap: 6px !important;
+          }
+          .hdr > div > div:last-child > div:last-child span { font-size: 9.5px !important; }
+
+          /* main */
+          .page-bg > div:last-child { padding: 14px 10px 36px !important; }
+
+          /* orbs hide on phone */
+          .orb { display: none !important; }
+
+          /* tabs full-width */
+          .tab-wrap { gap: 4px; padding: 4px; border-radius: 14px; }
+          .tab { font-size: 11px; padding: 9px 14px; gap: 5px; border-radius: 10px; }
+          .tab svg { width: 13px !important; height: 13px !important; }
+
+          /* cards grid stack */
+          .card-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+          .stat-grid { flex-wrap: wrap !important; gap: 8px !important; }
+          .page-bg .card { padding: 18px !important; border-radius: 16px !important; }
+          .val { font-size: 36px !important; }
+          .lbl { font-size: 9px !important; letter-spacing: .12em !important; margin-bottom: 7px !important; }
+          .ib { width: 38px !important; height: 38px !important; border-radius: 11px !important; }
+          .ib svg { width: 18px !important; height: 18px !important; }
+          .bdg { padding: 4px 10px !important; font-size: 10px !important; }
+
+          /* pump control header */
+          .card > div:first-child { padding: 16px 14px 14px !important; flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+
+          /* pump panel */
+          .pump-wrap { grid-template-columns: 1fr !important; }
+          .pump-left { padding: 24px 16px !important; border-right: none !important; border-bottom: 1.5px solid rgba(129,231,175,.16); }
+          .pump-ring { width: 110px !important; height: 110px !important; }
+          .power-btn { width: 72px !important; height: 72px !important; }
+          .power-btn svg { width: 26px !important; height: 26px !important; }
+          .pump-state-lbl { font-size: 10px !important; }
+          .pump-right { padding: 14px !important; gap: 10px !important; }
+          .ctrl-stat { padding: 10px 12px !important; gap: 8px !important; border-radius: 11px !important; }
+          .ctrl-stat-icon { width: 30px !important; height: 30px !important; border-radius: 9px !important; }
+          .ctrl-stat-icon svg { width: 14px !important; height: 14px !important; }
+          .ctrl-stat-lbl { font-size: 8px !important; }
+          .ctrl-stat-val { font-size: 12px !important; }
+
+          /* history stat pills */
+          .spill { padding: 12px 14px !important; gap: 8px !important; min-width: 0 !important; }
+          .spill-v { font-size: 18px !important; }
+          .spill-l { font-size: 9px !important; }
+
+          /* table header + filters */
+          .sel { padding: 7px 28px 7px 10px !important; font-size: 11px !important; }
+          .tbl-th { padding: 10px 10px !important; font-size: 8px !important; letter-spacing: .08em !important; }
+          .tbl-td { padding: 12px 10px !important; font-size: 11px !important; }
+          .tbl-td .bdg { padding: 3px 8px !important; font-size: 9px !important; }
+
+          /* alert modal */
+          .alert-box { padding: 24px 18px !important; border-radius: 18px !important; max-width: 92% !important; }
+          .alert-close { width: 28px !important; height: 28px !important; top: 10px !important; right: 10px !important; }
+          .btn-primary, .btn-ghost { padding: 12px 18px !important; font-size: 13px !important; }
+        }
       `}</style>
 
       <div className="page-bg">
@@ -591,7 +711,7 @@ export default function Dashboard() {
           {/* ════ MONITOR ════ */}
           {activeTab === 'monitor' && (
             <div style={{ display:'flex',flexDirection:'column',gap:20 }}>
-              <div style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:18 }}>
+              <div className="card-grid" style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:18 }}>
 
                 {/* Moisture */}
                 <div className={`card reveal d1 ${condition==='DRY'?'card-danger card-danger-pulse card-moisture-dry':'card-moisture'}`} style={{ padding:30 }}>
@@ -754,7 +874,7 @@ export default function Dashboard() {
             <div style={{ display:'flex',flexDirection:'column',gap:20 }}>
 
               {/* Stats */}
-              <div style={{ display:'flex',gap:14,flexWrap:'wrap' }}>
+              <div className="stat-grid" style={{ display:'flex',gap:14,flexWrap:'wrap' }}>
                 {[
                   { icon:<BarChart3 size={20} color="#1e93d6" strokeWidth={2.2} />,  val:sensorEntries.length,  lbl:'Total Readings',  c:'rgba(59,174,240,.16)',  bc:'rgba(59,174,240,.36)' },
                   { icon:<Droplets  size={20} color={dryCount>0?'#d63858':'#1aac6a'} strokeWidth={2.2} />, val:dryCount, lbl:'Dry Events', c:dryCount>0?'var(--rose-pale)':'rgba(46,196,122,.14)', bc:dryCount>0?'rgba(255,107,138,.30)':'rgba(46,196,122,.32)', vc:dryCount>0?'var(--rose)':undefined },
