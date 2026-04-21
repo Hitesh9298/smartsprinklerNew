@@ -571,74 +571,112 @@ export default function Dashboard() {
            RESPONSIVE — PHONE (≤480px)
            ══════════════════════════════════════════ */
         @media (max-width: 480px) {
-          /* header compact */
-          .hdr > div { height: 58px !important; padding: 0 12px !important; gap: 10px !important; }
-          .hdr > div > a { gap: 10px !important; }
-          .hdr > div > a > div:first-child { width: 38px !important; height: 38px !important; border-radius: 11px !important; box-shadow: 0 3px 14px rgba(46,196,122,.30) !important; }
-          .hdr > div > a > div:first-child svg { width: 18px !important; height: 18px !important; }
-          .hdr > div > a > div:last-child > div:first-child { font-size: 15px !important; }
-          .hdr > div > a > div:last-child > div:last-child { font-size: 9px !important; letter-spacing: .06em !important; }
-
-          /* connected pill shrink */
-          .hdr > div > div:last-child > div:last-child {
-            padding: 6px 12px !important; gap: 6px !important;
+          /* header — stack vertically */
+          .hdr > div {
+            height: auto !important; padding: 10px 12px !important;
+            flex-wrap: wrap !important; gap: 8px !important;
           }
-          .hdr > div > div:last-child > div:last-child span { font-size: 9.5px !important; }
+          .hdr > div > a { gap: 10px !important; flex: 1; min-width: 0; }
+          .hdr > div > a > div:first-child {
+            width: 36px !important; height: 36px !important; border-radius: 10px !important;
+            box-shadow: 0 3px 12px rgba(46,196,122,.28) !important;
+            flex-shrink: 0 !important;
+          }
+          .hdr > div > a > div:first-child svg { width: 18px !important; height: 18px !important; }
+          .hdr > div > a > div:last-child > div:first-child { font-size: 14px !important; }
+          .hdr > div > a > div:last-child > div:last-child { font-size: 8.5px !important; letter-spacing: .06em !important; }
 
-          /* main */
-          .page-bg > div:last-child { padding: 14px 10px 36px !important; }
+          /* connected/offline pill */
+          .status-pill { padding: 5px 10px !important; gap: 5px !important; }
+          .status-pill .dot { width: 7px !important; height: 7px !important; }
+          .status-pill span { font-size: 8.5px !important; letter-spacing: .06em !important; }
+
+          /* DRY ALERT btn */
+          .dng-alert-btn { padding: 5px 10px !important; font-size: 8px !important; gap: 4px !important; }
+
+          /* main container */
+          .page-bg > div:last-child { padding: 12px 8px 32px !important; }
 
           /* orbs hide on phone */
           .orb { display: none !important; }
 
-          /* tabs full-width */
-          .tab-wrap { gap: 4px; padding: 4px; border-radius: 14px; }
-          .tab { font-size: 11px; padding: 9px 14px; gap: 5px; border-radius: 10px; }
+          /* tabs — full width, equal size */
+          .tab-wrap { gap: 4px; padding: 3px; border-radius: 12px; width: 100%; }
+          .tab { font-size: 11px; padding: 9px 0; gap: 5px; border-radius: 10px; flex: 1; justify-content: center; }
           .tab svg { width: 13px !important; height: 13px !important; }
 
-          /* cards grid stack */
-          .card-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
-          .stat-grid { flex-wrap: wrap !important; gap: 8px !important; }
-          .page-bg .card { padding: 18px !important; border-radius: 16px !important; }
-          .val { font-size: 36px !important; }
-          .lbl { font-size: 9px !important; letter-spacing: .12em !important; margin-bottom: 7px !important; }
-          .ib { width: 38px !important; height: 38px !important; border-radius: 11px !important; }
-          .ib svg { width: 18px !important; height: 18px !important; }
-          .bdg { padding: 4px 10px !important; font-size: 10px !important; }
+          /* ── CARDS ── */
+          .card-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+          .page-bg .card { padding: 16px !important; border-radius: 14px !important; }
+          .val { font-size: 32px !important; }
+          .lbl { font-size: 9px !important; letter-spacing: .10em !important; margin-bottom: 6px !important; }
+          .ib { width: 36px !important; height: 36px !important; border-radius: 10px !important; }
+          .ib svg { width: 16px !important; height: 16px !important; }
+          .bdg { padding: 4px 9px !important; font-size: 9.5px !important; }
+          .bar-wrap { margin-top: 10px !important; }
 
           /* pump control header */
-          .card > div:first-child { padding: 16px 14px 14px !important; flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+          .pump-header {
+            padding: 14px 12px 12px !important;
+            flex-direction: column !important; align-items: flex-start !important; gap: 10px !important;
+          }
+          .pump-header .ib { width: 34px !important; height: 34px !important; }
+          .pump-header > div:last-child {
+            align-self: stretch !important; justify-content: center !important;
+          }
 
-          /* pump panel */
+          /* pump panel body */
           .pump-wrap { grid-template-columns: 1fr !important; }
-          .pump-left { padding: 24px 16px !important; border-right: none !important; border-bottom: 1.5px solid rgba(129,231,175,.16); }
-          .pump-ring { width: 110px !important; height: 110px !important; }
-          .power-btn { width: 72px !important; height: 72px !important; }
-          .power-btn svg { width: 26px !important; height: 26px !important; }
-          .pump-state-lbl { font-size: 10px !important; }
-          .pump-right { padding: 14px !important; gap: 10px !important; }
-          .ctrl-stat { padding: 10px 12px !important; gap: 8px !important; border-radius: 11px !important; }
-          .ctrl-stat-icon { width: 30px !important; height: 30px !important; border-radius: 9px !important; }
-          .ctrl-stat-icon svg { width: 14px !important; height: 14px !important; }
-          .ctrl-stat-lbl { font-size: 8px !important; }
-          .ctrl-stat-val { font-size: 12px !important; }
+          .pump-left {
+            padding: 20px 14px !important; border-right: none !important;
+            border-bottom: 1.5px solid rgba(129,231,175,.16);
+          }
+          .pump-ring { width: 100px !important; height: 100px !important; }
+          .power-btn { width: 66px !important; height: 66px !important; }
+          .power-btn svg { width: 24px !important; height: 24px !important; }
+          .pump-state-lbl { font-size: 9px !important; margin-top: 12px !important; }
+          .pump-right { padding: 12px !important; gap: 8px !important; }
+          .ctrl-stat { padding: 10px 10px !important; gap: 8px !important; border-radius: 10px !important; }
+          .ctrl-stat-icon { width: 28px !important; height: 28px !important; border-radius: 8px !important; }
+          .ctrl-stat-icon svg { width: 13px !important; height: 13px !important; }
+          .ctrl-stat-lbl { font-size: 7.5px !important; }
+          .ctrl-stat-val { font-size: 11.5px !important; }
+          .ctrl-stat .bdg { padding: 3px 7px !important; font-size: 8.5px !important; }
 
-          /* history stat pills */
-          .spill { padding: 12px 14px !important; gap: 8px !important; min-width: 0 !important; }
-          .spill-v { font-size: 18px !important; }
-          .spill-l { font-size: 9px !important; }
+          /* ── HISTORY TAB ── */
+          /* stat pills — 2-column grid */
+          .stat-grid {
+            display: grid !important; grid-template-columns: 1fr 1fr !important;
+            gap: 8px !important;
+          }
+          .spill { padding: 10px 12px !important; gap: 8px !important; min-width: 0 !important; flex: unset !important; }
+          .spill .ib { width: 32px !important; height: 32px !important; }
+          .spill .ib svg { width: 14px !important; height: 14px !important; }
+          .spill-v { font-size: 16px !important; }
+          .spill-l { font-size: 8px !important; }
 
-          /* table header + filters */
-          .sel { padding: 7px 28px 7px 10px !important; font-size: 11px !important; }
-          .tbl-th { padding: 10px 10px !important; font-size: 8px !important; letter-spacing: .08em !important; }
-          .tbl-td { padding: 12px 10px !important; font-size: 11px !important; }
-          .tbl-td .bdg { padding: 3px 8px !important; font-size: 9px !important; }
+          /* Activity Log header — stack */
+          .log-header {
+            padding: 14px 12px !important;
+            flex-direction: column !important; align-items: flex-start !important; gap: 10px !important;
+          }
+          .log-header .ib { width: 36px !important; height: 36px !important; }
+          .log-filters { width: 100% !important; }
+          .log-filters .sel { flex: 1; width: 0; min-width: 0; }
+
+          /* table — force min-width so it scrolls horizontally */
+          table { min-width: 620px !important; }
+          .tbl-th { padding: 10px 8px !important; font-size: 8px !important; letter-spacing: .06em !important; }
+          .tbl-td { padding: 10px 8px !important; font-size: 10.5px !important; }
+          .tbl-td .bdg { padding: 3px 7px !important; font-size: 8px !important; }
 
           /* alert modal */
-          .alert-box { padding: 24px 18px !important; border-radius: 18px !important; max-width: 92% !important; }
-          .alert-close { width: 28px !important; height: 28px !important; top: 10px !important; right: 10px !important; }
-          .btn-primary, .btn-ghost { padding: 12px 18px !important; font-size: 13px !important; }
+          .alert-box { padding: 22px 16px !important; border-radius: 16px !important; max-width: 95% !important; }
+          .alert-close { width: 26px !important; height: 26px !important; top: 8px !important; right: 8px !important; border-radius: 8px !important; }
+          .alert-box .ib { width: 42px !important; height: 42px !important; }
+          .btn-primary, .btn-ghost { padding: 11px 16px !important; font-size: 12.5px !important; }
         }
+
       `}</style>
 
       <div className="page-bg">
@@ -690,7 +728,7 @@ export default function Dashboard() {
               {condition === 'DRY' && (
                 <button onClick={() => setAlertVisible(true)} className="dng-alert-btn"><AlertTriangle size={11} /> DRY ALERT</button>
               )}
-              <div style={{ display:'flex',alignItems:'center',gap:10,padding:'9px 22px',background:status?'rgba(13,122,66,.10)':'rgba(192,39,62,.10)',border:`2px solid ${status?'rgba(13,122,66,.35)':'rgba(192,39,62,.35)'}`,borderRadius:50,boxShadow:status?'0 0 16px rgba(13,122,66,.14)':'0 0 16px rgba(192,39,62,.14)' }}>
+              <div style={{ display:'flex',alignItems:'center',gap:10,padding:'9px 22px',background:status?'rgba(13,122,66,.10)':'rgba(192,39,62,.10)',border:`2px solid ${status?'rgba(13,122,66,.35)':'rgba(192,39,62,.35)'}`,borderRadius:50,boxShadow:status?'0 0 16px rgba(13,122,66,.14)':'0 0 16px rgba(192,39,62,.14)' }} className="status-pill">
                 <div className="dot" style={{ width:9,height:9,background:status?'#0d7a42':'#c0273e',boxShadow:status?'0 0 8px rgba(13,122,66,.60)':'0 0 8px rgba(192,39,62,.60)' }} />
                 <span style={{ fontSize:12.5,fontWeight:700,fontFamily:'var(--fm)',letterSpacing:'.10em',color:status?'#0d7a42':'#c0273e' }}>
                   {status ? 'CONNECTED' : 'OFFLINE'}
@@ -772,7 +810,7 @@ export default function Dashboard() {
               <div className="card reveal d4" style={{ overflow:'hidden' }}>
 
                 {/* Header row */}
-                <div style={{ padding:'24px 32px 20px',borderBottom:'1.5px solid rgba(129,231,175,.15)',display:'flex',alignItems:'center',justifyContent:'space-between',background:'rgba(232,248,240,.38)' }}>
+                <div className="pump-header" style={{ padding:'24px 32px 20px',borderBottom:'1.5px solid rgba(129,231,175,.15)',display:'flex',alignItems:'center',justifyContent:'space-between',background:'rgba(232,248,240,.38)' }}>
                   <div style={{ display:'flex',alignItems:'center',gap:14 }}>
                     <div className="ib ib-mint"><Settings size={20} color="#1aac6a" strokeWidth={2.2} /></div>
                     <div>
@@ -894,7 +932,7 @@ export default function Dashboard() {
 
               {/* Table */}
               <div className="card reveal d1" style={{ overflow:'hidden' }}>
-                <div style={{ padding:'22px 28px',borderBottom:'1.5px solid rgba(174,222,252,.22)',display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:14,background:'rgba(232,248,240,.42)' }}>
+                <div className="log-header" style={{ padding:'22px 28px',borderBottom:'1.5px solid rgba(174,222,252,.22)',display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:14,background:'rgba(232,248,240,.42)' }}>
                   <div style={{ display:'flex',alignItems:'center',gap:14 }}>
                     <div className="ib ib-sky" style={{ width:46,height:46,borderRadius:13 }}><TrendingUp size={20} color="#1e93d6" strokeWidth={2.2} /></div>
                     <div>
@@ -902,7 +940,7 @@ export default function Dashboard() {
                       <div style={{ fontSize:11,color:'var(--t2)',fontFamily:'var(--fm)',marginTop:2,letterSpacing:'.10em',fontWeight:600 }}>{filteredHistory.length} RECORDS</div>
                     </div>
                   </div>
-                  <div style={{ display:'flex',gap:10 }}>
+                  <div className="log-filters" style={{ display:'flex',gap:10 }}>
                     <select className="sel" value={modeFilter} onChange={e => setModeFilter(e.target.value)}>
                       <option value="all">All Modes</option>
                       <option value="AUTOMATIC">Automatic</option>
